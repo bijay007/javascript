@@ -1,3 +1,4 @@
+** this sucks ill add better explanation to this later . keep tight !! **
 var century = function(twothousand) {  // century function has another function inside //
   var currentYear = function (sixteen) {
     return twothousand + sixteen;  // here the inner function (currentYear) return a VALUE (twothousand + sixteen) //
