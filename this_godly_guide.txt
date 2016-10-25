@@ -1,0 +1,29 @@
+// YOU WONT GET CONFUSED BY 'this' ANYMORE AFTER READING THIS (xD)
+PSA : http://javascriptissexy.com/understand-javascripts-this-with-clarity-and-master-it/  - A LIFESAVER!! I HAVE NOT ENOUGH WORDS TO THANK THE WRITERS OF THIS.
+
+Example 1:
+
+function learningTHIS() {
+  this.hey = 'heyy';
+}
+/* 'this' always refers to the object, that a function is a method of.
+In this case, what is the function learningTHIS() a method of ?? It's the method of the 'global window' scope.
+So 'this' refers to 'global window' in this case. */
+
+Example 2:
+
+  var Person = {
+    name: 'random',
+    code: 0,
+    agent: function() {
+      this.name = 'bijay';
+      this.code = 7;
+    }
+  };
+
+/* Here the function 'agent' is a method of the object 'Person'.
+So 'this' refers to 'Person'. Always remeber that 'this' refers to the 'real owner' of the function we are executing.
+Here, 'this.name' is like saying 'Person.name' but we don't write Person.name just incase there is another global variable called Person declared somewhere in the program code.*/
+
+console.dir(this.name); // gives you bijay as now this refers to 'Person' object. 'this' has the values of the invoking object (here 'Person').
+console.dir(Person); // you can check this in console and see its objects and other interesting stuffs.
