@@ -9,7 +9,12 @@ function do_game() {
     while (check_guess(userInput)!==true) {
         guesses ++;
         userInput = prompt(' Now remember what color I chose ?');
-    };    
+    };
+    myBody = document.getElementsByTagName("body")[0];  // 0 is the index of body element
+    myBody.style.background = target;
+    setTimeout (function(){
+        alert("Watch the page colour change in 1.2..3...")
+    }, 500);
 };
 
 function check_guess(userInput) {
@@ -28,11 +33,6 @@ function check_guess(userInput) {
     }
 };
 do_game();  // calling the main function
-myBody = document.getElementsByTagName("body")[0];  // 0 is the index of body element
-myBody.style.background = target;
-setTimeout (function(){
-    alert("Watch the page colour change in 1.2..3...")
-    }, 2000);
 
 </script>
 <body onload="do_game()">
