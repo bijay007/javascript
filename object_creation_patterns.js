@@ -39,7 +39,8 @@ german.printAZ();
 // PROTOTYPE PATTERN
 
 var letters = function(){
-    };  // empty function :O
+    this.everyInstanceHasThisProperty = "this is recreated in every new objects while those below aren't"
+    };
 
     letters.prototype.alphabet = 'heyhey'; // here we have properties with deafult set values
     letters.prototype.noOfLetters = 0;
@@ -51,6 +52,6 @@ var spanish = new letters(); // here we create prototype object and we can overw
     spanish.alphabet = 'A to Z';
     spanish.noOfLetters = 28;
         spanish.printAZ();
-        //in above, if we dont assign any property to the new object, it will take default property value (ie if we remove line 51, spanish object will have 'heyhey' insated of undefined)
-        
+// the plus point of using prototype is to save cpu processing, as in every instances of main objects created all methods are re-written even tho we might not want them.
+//Using prototype saves the methods and properties we don't need in every new object in __proto__ property (check in console).
     
