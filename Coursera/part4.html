@@ -1,0 +1,63 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title> Find the odd face out</title>
+	<style>
+		img {position: absolute}
+		div {height: 500px; width: 500px; position: absolute}
+		#h2 {color :red; font-family: Verdana; margin-left: 380px}
+		#p0 {color: darkviolet; font-family: Arial; margin-left: 360px}
+		#rightside {border-left: 1px solid black; left: 500px}
+	</style>
+</head>
+<body onload="generateFaces()" style="background-color: #00ABC0">
+	<h2 id="h2">MATCHING GAME</h2>
+	<p id="p0"> Click on the extra smiling face on the left</p>
+	<div id="leftside">
+	</div>
+	<div id="rightside">
+	</div>
+	<script>
+		var noOfFaces = 5;
+		var myBody = document.getElementsByTagName("body")[0];
+		var leftPart = document.getElementById("leftside");	
+		var rightPart = document.getElementById("rightside");
+	
+		function generateFaces(){
+			for (var i=0; i<noOfFaces; i++) {
+				var smiley = document.createElement("img");
+				smiley.src = "http://home.cse.ust.hk/~rossiter/mooc/matching_game/smile.png"
+				smiley.style.top = Math.floor(Math.random()*400)+"px";
+				smiley.style.left = Math.floor(Math.random()*400)+"px";
+				leftPart.appendChild(smiley);
+			}
+
+			var imagesInLeft = leftPart.cloneNode(true);
+			imagesInLeft.removeChild(imagesInLeft.lastChild);
+			rightPart.appendChild(imagesInLeft);
+
+			myBody.onclick = function gameOver() {    // executes if user clicks on wrong item or elsewhere on body (resets all values)
+				myBody.onclick = null;
+				leftPart.lastChild.onclick = null;
+				alert("BOOM !! YOU ARE DEAD !!!!. Reload the page to play Again");
+			}
+	
+			leftPart.lastChild.onclick = function levelUp(event) {  
+				/* executes if user click on last item (which is the odd one).Increases no of images by 5 and executes the original function to add images on right and left. Before that removes all old images */
+				event.stopPropagation();
+				resetImages();
+				noOfFaces += 5;
+				generateFaces();
+			}	
+
+			function resetImages() {                   // keeps deleting children from body until no child exists
+				while (leftPart.firstChild) {
+					leftPart.removeChild(leftPart.firstChild);
+				} while (rightPart.firstChild){
+					rightPart.removeChild(rightPart.firstChild);
+				}
+			}
+		};	
+	</script>
+</body>
+</html>
