@@ -54,4 +54,4 @@ var spanish = new letters(); // here we create prototype object and we can overw
         spanish.printAZ();
 // the plus point of using prototype is to save cpu processing, as in every instances of main objects created all methods are re-written even tho we might not want them.
 //Using prototype saves the methods and properties we don't need in every new object in __proto__ property (check in console).
-    
+    // PROTOTYPE PROPERTIES OR METHODS SHOULD ALWAYS BE OUTSIDE THE MAIN FUNCTION ELSE NO BENEFIT IN USING THEM //
