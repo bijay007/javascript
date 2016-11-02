@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title> Find the odd face out</title>
+	<style>
+		img {position: absolute}
+		div {height: 500px; width: 500px; position: absolute}
+		#h2 {color :red; font-family: Verdana; margin-left: 380px}
+		#p0 {color: darkviolet; font-family: Arial; margin-left: 360px}
+		#rightside {border-left: 1px solid black; left: 500px}
+	</style>
+	<script>
+		var noOfFaces = 5;
+		var leftPart = document.getElementById("leftside");
+		function generateFaces(){
+			for (var i=0; i<noOfFaces; i++) {
+				var smiley = document.createElement("img");
+				smiley.src = "http://home.cse.ust.hk/~rossiter/mooc/matching_game/smile.png"
+				smiley.style.top = Math.floor(Math.random()*400)+"px";
+				smiley.style.left = Math.floor(Math.random()*400)+"px";
+				leftPart.appendChild(smiley);
+				}
+			}
+		generateFaces();
+	</script>
+</head>
+<body onload="generateFaces()">
+		<h2 id="h2">MATCHING GAME</h2>
+		<p id="p0"> Click on the extra smiling face on the left</p>
+		<div id="leftside">
+		</div>
+		<div id="rightside">
+		</div>
+</body>
+</html>
