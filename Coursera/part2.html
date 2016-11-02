@@ -9,6 +9,14 @@
 		#p0 {color: darkviolet; font-family: Arial; margin-left: 360px}
 		#rightside {border-left: 1px solid black; left: 500px}
 	</style>
+</head>
+<body onload="generateFaces()">
+	<h2 id="h2">MATCHING GAME</h2>
+	<p id="p0"> Click on the extra smiling face on the left</p>
+	<div id="leftside">
+	</div>
+	<div id="rightside">
+	</div>
 	<script>
 		var noOfFaces = 5;
 		var leftPart = document.getElementById("leftside");
@@ -21,15 +29,6 @@
 				leftPart.appendChild(smiley);
 				}
 			}
-		generateFaces();
 	</script>
-</head>
-<body onload="generateFaces()">
-		<h2 id="h2">MATCHING GAME</h2>
-		<p id="p0"> Click on the extra smiling face on the left</p>
-		<div id="leftside">
-		</div>
-		<div id="rightside">
-		</div>
 </body>
 </html>
