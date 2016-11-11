@@ -62,3 +62,24 @@ function wxyz(){
 
 /*For more look up this ytube vid, good example on closure and all above mentioned.
 MUST WATCH : https://www.youtube.com/watch?v=iSlSxDNarDY */
+
+	   
+	    
+// REFERENCE ERROR AND TYPE ERROR //
+	    
+	    foo();
+	    var foo = function bar() {
+	    	console.log('error');
+	    };
+	    
+// This has both TypeError and Reference Error. The way JS engine hoists the variables is as follows:
+	    var foo;
+	    foo();  // TYPE ERROR (WHY? Because the type of foo is undefined at this certain point and we are trying to execute it as a function)
+	    bar(); // REFERENCE ERROR (WHY? Because bar is not referenced in the global scope but later on inside the function)
+	    
+	    foo = function() {
+	    	bar = _self_;
+		    console.log('error');
+	    };
+// Extracted from the book - You don't know Javascript: Scopes and Closures -
+	    
