@@ -1,0 +1,39 @@
+<html>
+<script type="text/javascript">
+var colors = ['red','blue','green','yellow','black'];
+var target = colors[Math.floor(Math.random()*colors.length)];
+var guesses = 0; // guess counter
+function do_game() {
+    alert('The colors are '+ colors.sort() + ' and my choice is ' + target.toUpperCase());
+    var userInput = prompt('Enter the color I guessed :\n Write all letters in LOWERCASE. ');
+    while (check_guess(userInput)!==true) {
+        guesses ++;
+        userInput = prompt(' Now remember what color I chose ?');
+    };
+    myBody = document.getElementsByTagName("body")[0];  // 0 is the index of body element
+    myBody.style.background = target;
+    setTimeout (function(){
+        alert("Watch the page colour change in 1.2..3...")
+    }, 500);
+};
+function check_guess(userInput) {
+    if (colors.includes(userInput) == false) {  // ECMAScript 6
+        alert('Sorry. I don\'t recognize this color. Enter a color from the list only');
+        return false;
+    } else if (userInput > target) {
+        alert('Your color is alphabetically higher than mine');
+        return false;
+    } else if (userInput < target) {
+        alert('Your color is alphabetically lower than mine');
+        return false;
+    } else {
+        alert ('Congratulations you got it right !\n It took you ' + guesses + ' guesses to finish the game');
+        return true;
+    }
+};
+do_game();  // calling the main function
+</script>
+<body onload="do_game()">
+<h3> This page is so colorFULL!! </h3>
+</body>
+</html>
