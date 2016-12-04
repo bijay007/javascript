@@ -10,4 +10,5 @@ console.log(y);  // 3. same as 1 but just that the function has name y and is me
 console.log(y()); // 4. same as 2 but stores doesn't store anywhere (is it y = 2016 ?? gotta test it)
 
 console.log(x+z); // here js does implicit coercion -> concatenates x with z (whole function definition with z(value undefined here)
-// Javascript when sees x+y,it does implicit coercion using its internal .toString() method (others can be toNumber(), toBoolean() etc)
+// Javascript, when it sees x+y,it does implicit coercion using its internal toString() method. All primitives have natural 
+// string form. Here z is undefined with string form "undefined".(other internal methods are toNumber(), toBoolean() etc..)
