@@ -7,7 +7,6 @@ var stand = document.getElementById("standBtn").addEventListener("click", showSc
 var playerSum = document.getElementById("playersum");
 var dealerSum = document.getElementById("dealersum");
 var writeResult = document.getElementById("resultbox");
-var fragment = document.createDocumentFragment();
 
 // Defining properties and methods for every single card object created by fillPlayingCards function
 function CardObject(cardNum, cardSuit) {
@@ -28,11 +27,12 @@ CardObject.prototype.getCardValue = function() {
 function DeckObject() {
     this.iniDeck = [];
     this.displayCards = function(cards) { // displaying corresponding card images on DOM
+        var fragment = document.createDocumentFragment();
         for (var i = 0; i < cards.length; i++) {
             var imgElement = document.createElement("img");
             imgElement.src = "Images/" + cards[i].cardNum + "_of_" + cards[i].cardSuit + ".png";
-            imgElement.style.height = "60px";
-            imgElement.style.width = "50px";
+            imgElement.style.height = "120px";
+            imgElement.style.width = "100px";
             fragment.appendChild(imgElement);
         }
         if (this == mainPlayer) {
