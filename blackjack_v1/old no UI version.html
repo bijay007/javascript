@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> A simple BlackJack Game </title>
+
+    <meta charset="utf-8">
+    <meta name="author" content="bijay timilsina">
+    <meta name="keywords" content="HTML, CSS, JAVASCRIPT, BLACKJACK, BIJAY">
+    <link rel="stylesheet" type="text/css" href="blackjack.css">
+    <script type="text/javascript" src= "blackjack.js"></script>
+    <script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
+
+<body>
+  <header>
+    <h1 id="h1"> A simple online BlackJack Game </h1>
+    <h4 id="h4"> Click on the Play button to start a quick game </h4>
+  </header>
+
+  <img src = "http://www.junkets.ca/gaming/blackjack.jpg" alt='img'/>
+    <div class='table'>
+        <div id="output">
+            <form>
+                USER:
+                <input type="text" id='userbox' value="">
+                DEALER:
+                <input type="text" id='dealerbox' value="">
+            </form>
+            <br>
+          </div>
+            <div id="controls">
+                <button type="button" id="hitbtn">HIT</button>
+                <button type="button" id="standbtn">STAND</button>
+                <button type="button" id="playbtn">PLAY</button>
+				        <button type="reset" id='resetbtn'>RESET</button>
+            </div>
+        </div>
+    <footer>
+      <div id='footer'>
+        <p id='last'> THANKS FOR PLAYING </p>
+      </div>
+    </footer>
+</body>
+</html>
