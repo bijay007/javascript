@@ -46,7 +46,7 @@ function() {
 	var idTitlePair = newReleases.map(function (items) {
 		return {id: items.id, title: items.title};
 	});
-	return idTitlePair;
+return idTitlePair;
 }
 //**************** See the similarities and differences between the two ?? **********
 
